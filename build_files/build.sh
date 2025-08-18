@@ -4,7 +4,7 @@ set -ouex pipefail
 
 ### Install packages
 
-dnf5 install -y blueman nautilus iwgtk xdg-user-dirs-gtk xdg-user-dirs file-roller kitty btop dunst tlp zsh zsh-syntax-highlighting brightnessctl ffmpegthumbnailer tuigreet greetd rofi-wayland --setopt=install_weak_deps=False 
+dnf5 install -y blueman nautilus waybar iwgtk xdg-user-dirs-gtk xdg-user-dirs file-roller kitty btop dunst tlp zsh zsh-syntax-highlighting brightnessctl ffmpegthumbnailer tuigreet greetd rofi-wayland --setopt=install_weak_deps=False 
 
 ## Enable Ublue copr
 dnf5 -y copr enable ublue-os/akmods 
@@ -12,7 +12,7 @@ dnf5 -y copr enable ublue-os/akmods
 
 ## Hyprland
 dnf5 -y copr enable solopasha/hyprland 
-dnf5 -y install hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot waybar-git  --setopt=install_weak_deps=False
+dnf5 -y install hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot  --setopt=install_weak_deps=False
 dnf5 -y copr disable solopasha/hyprland 
 
 dnf5 -y copr enable tofik/nwg-shell 
