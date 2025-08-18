@@ -4,7 +4,7 @@ set -ouex pipefail
 
 ### Install packages
 
-dnf5 install -y blueman nautilus waybar iwgtk xdg-user-dirs-gtk xdg-user-dirs file-roller kitty btop dunst tlp zsh zsh-syntax-highlighting brightnessctl ffmpegthumbnailer tuigreet greetd rofi-wayland --setopt=install_weak_deps=False 
+dnf5 install -y blueman nautilus waybar xdg-user-dirs-gtk xdg-user-dirs file-roller kitty btop dunst tlp zsh zsh-syntax-highlighting brightnessctl tuigreet greetd rofi-wayland --setopt=install_weak_deps=False 
 
 ## Enable Ublue copr
 dnf5 -y copr enable ublue-os/akmods 
