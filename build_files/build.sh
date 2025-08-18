@@ -4,21 +4,40 @@ set -ouex pipefail
 
 ### Install packages
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+dnf5 install -y blueman nautilus xdg-user-dirs-gtk xdg-user-dirs file-roller kitty gnome-text-editor blueman-nautilus tlp zsh zsh-syntax-highlighting brightnessctl ffmpegthumbnailer loupe tuigreet greetd rofi-wayland --setopt=install_weak_deps=False 
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
+## Hyprland
+dnf5 -y copr enable solopasha/hyprland 
+dnf5 -y install hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot waybar-git  --setopt=install_weak_deps=False
+dnf5 -y copr disable solopasha/hyprland 
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+dnf5 -y copr enable tofik/nwg-shell 
+dnf5 -y install nwg-look
+dnf5 -y copr disable tofik/nwg-shell 
 
-#### Example for enabling a System Unit File
+dnf5 -y copr enable chenxiaolong/sbctl 
+dnf5 -y install sbctl
+dnf5 -y copr disable chenxiaolong/sbctl 
 
-systemctl enable podman.socket
+
+## Tailscale
+dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+dnf5 -y config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/shells:zsh-users:zsh-autosuggestions/Fedora_Rawhide/shells:zsh-users:zsh-autosuggestions.repo
+dnf5 -y install tailscale zsh-autosuggestions clapper
+
+rm /etc/yum.repos.d/tailscale.repo
+rm /etc/yum.repos.d/shells:zsh-users:zsh-autosuggestions.repo
+
+
+## Nix
+mkdir -p /nix && \
+	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix -o /nix/determinate-nix-installer.sh && \
+	chmod a+rx /nix/determinate-nix-installer.sh
+
+ curl -L https://github.com/curlpipe/ox/releases/latest/download/ox -o /usr/bin/ox && \
+ chmod +x /usr/bin/ox
+
+systemctl enable tlp
+systemctl enable tailscaled
+systemctl enable greetd
+
