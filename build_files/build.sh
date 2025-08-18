@@ -4,7 +4,7 @@ set -ouex pipefail
 
 ### Install packages
 
-dnf5 install -y blueman nautilus waybar xdg-user-dirs-gtk xdg-user-dirs file-roller kitty btop dunst tlp zsh zsh-syntax-highlighting brightnessctl tuigreet greetd rofi-wayland --setopt=install_weak_deps=False 
+dnf5 install -y blueman NetworkManager-tui nautilus waybar xdg-user-dirs-gtk xdg-user-dirs file-roller kitty btop dunst tlp zsh zsh-syntax-highlighting brightnessctl tuigreet rofi-wayland --setopt=install_weak_deps=False 
 
 ## Enable Ublue copr
 dnf5 -y copr enable ublue-os/akmods 
@@ -27,7 +27,7 @@ dnf5 -y copr disable chenxiaolong/sbctl
 ## Tailscale
 dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf5 -y config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/shells:zsh-users:zsh-autosuggestions/Fedora_Rawhide/shells:zsh-users:zsh-autosuggestions.repo
-dnf5 -y install tailscale zsh-autosuggestions
+dnf5 -y install tailscale zsh-autosuggestions greetd
 
 rm /etc/yum.repos.d/tailscale.repo
 rm /etc/yum.repos.d/shells:zsh-users:zsh-autosuggestions.repo
