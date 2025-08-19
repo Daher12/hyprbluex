@@ -5,17 +5,17 @@ set -ouex pipefail
 ### Install packages
 
 ## environment
-dnf5 install -y xorg-x11-server-Xwayland polkit dbus-tools dbus-daemon qt6-qtwayland qt5-qtwayland xdg-desktop-portal-gtk xdg-user-dirs kitty tlp zsh zsh-syntax-highlighting --setopt=install_weak_deps=False 
+dnf5 install -y  dbus-tools dbus-daemon qt6-qtwayland xdg-user-dirs kitty tlp zsh zsh-syntax-highlighting --setopt=install_weak_deps=False 
 
 ## sound
-dnf5 install -y wireplumber pipewire pipewire-pulseaudio alsa-firmware pavucontrol pipewire-libs-extra
+dnf5 install -y pavucontrol
 
 # networking
-dnf5 install -y blueman bluez-tools bluez network-manager-applet iwd 
+dnf5 install -y blueman bluez-tools network-manager-applet iwd --setopt=install_weak_deps=False
 
 ## other
 
-dnf5 install -y ffmpeg ffmpeg-libs libfdk-aac  gstreamer1-plugins-bad gstreamer1-plugins-ugly 
+dnf5 install -y nautilus gvfs-nfs firewall-config
 
 
 ## Enable Ublue copr
@@ -26,7 +26,7 @@ dnf5 -y copr disable  ublue-os/packages
 
 ## Hyprland
 dnf5 -y copr enable solopasha/hyprland 
-dnf5 -y install hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot  --setopt=install_weak_deps=False
+dnf5 -y install hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot xdg-desktop-portal-hyprland --setopt=install_weak_deps=False
 dnf5 -y copr disable solopasha/hyprland 
 
 dnf5 -y copr enable tofik/nwg-shell 
@@ -41,7 +41,7 @@ dnf5 -y copr disable chenxiaolong/sbctl
 ## Tailscale
 dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf5 -y config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/shells:zsh-users:zsh-autosuggestions/Fedora_Rawhide/shells:zsh-users:zsh-autosuggestions.repo
-dnf5 -y install tailscale zsh-autosuggestions greetd
+dnf5 -y install tailscale zsh-autosuggestions greetd tuigreet
 
 rm /etc/yum.repos.d/tailscale.repo
 rm /etc/yum.repos.d/shells:zsh-users:zsh-autosuggestions.repo
