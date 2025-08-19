@@ -47,4 +47,4 @@ mkdir -p /nix && \
 #systemctl enable tlp
 #systemctl enable tailscaled
 #systemctl enable greetd
-
+rm -rf  /usr/etc
