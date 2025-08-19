@@ -4,11 +4,27 @@ set -ouex pipefail
 
 ### Install packages
 
-dnf5 install -y blueman NetworkManager-tui nautilus waybar xdg-user-dirs-gtk xdg-user-dirs file-roller kitty btop dunst tlp zsh zsh-syntax-highlighting brightnessctl tuigreet rofi-wayland --setopt=install_weak_deps=False 
+dnf5 install -y blueman  xorg-x11-server-Xwayland polkit dbus-tools dbus-daemon pavucontrol qt6-qtwayland qt5-qtwayland blueman-utils nm-applet nautilus xdg-desktop-portal-gtk xdg-user-dirs kitty tlp zsh zsh-syntax-highlighting brightnessctl rofi-wayland --setopt=install_weak_deps=False 
+
+## environment
+dnf5 install -y xorg-x11-server-Xwayland polkit dbus-tools dbus-daemon qt6-qtwayland qt5-qtwayland xdg-desktop-portal-gtk xdg-user-dirs kitty tlp zsh zsh-syntax-highlighting --setopt=install_weak_deps=False 
+
+## sound
+dnf5 install -y wireplumber pipewire pipewire-pulseaudio alsa-firmware pavucontrol pipewire-libs-extra
+
+# networking
+dnf5 install -y blueman bluez-tools bluez network-manager-applet iwd 
+
+## other
+
+dnf5 install -y ffmpeg ffmpeg-libs libfdk-aac  gstreamer1-plugins-bad gstreamer1-plugins-ugly 
+
 
 ## Enable Ublue copr
 dnf5 -y copr enable ublue-os/akmods 
-
+dnf5 -y copr enable ublue-os/packages
+dnf5 -y install ublue-os-udev-rules ublue-os-update-services ublue-os-signing ublue-os-just ublue-os-luks
+dnf5 -y copr disable  ublue-os/packages
 
 ## Hyprland
 dnf5 -y copr enable solopasha/hyprland 
@@ -32,6 +48,7 @@ dnf5 -y install tailscale zsh-autosuggestions greetd
 rm /etc/yum.repos.d/tailscale.repo
 rm /etc/yum.repos.d/shells:zsh-users:zsh-autosuggestions.repo
 
+dnf5 -y copr disable ublue-os/akmods
 
 ## Nix
 mkdir -p /nix && \
