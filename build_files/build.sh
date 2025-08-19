@@ -20,9 +20,6 @@ dnf5 install -y nautilus gvfs-nfs firewall-config
 
 ## Enable Ublue copr
 dnf5 -y copr enable ublue-os/akmods 
-dnf5 -y copr enable ublue-os/packages
-dnf5 -y install ublue-os-udev-rules ublue-os-update-services ublue-os-signing ublue-os-just ublue-os-luks
-dnf5 -y copr disable  ublue-os/packages
 
 ## Hyprland
 dnf5 -y copr enable solopasha/hyprland 
