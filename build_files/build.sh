@@ -15,18 +15,15 @@ dnf5 install -y blueman bluez-tools network-manager-applet iwd --setopt=install_
 
 ## other
 
-dnf5 install -y nautilus gvfs-nfs firewall-config
+dnf5 install -y nautilus gvfs-nfs
 
 
 ## Enable Ublue copr
 dnf5 -y copr enable ublue-os/akmods 
-dnf5 -y copr enable ublue-os/packages
-dnf5 -y install ublue-os-udev-rules ublue-os-update-services ublue-os-signing ublue-os-just ublue-os-luks
-dnf5 -y copr disable  ublue-os/packages
 
 ## Hyprland
 dnf5 -y copr enable solopasha/hyprland 
-dnf5 -y install hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot xdg-desktop-portal-hyprland --setopt=install_weak_deps=False
+dnf5 -y install hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot --setopt=install_weak_deps=False
 dnf5 -y copr disable solopasha/hyprland 
 
 dnf5 -y copr enable tofik/nwg-shell 
@@ -58,5 +55,4 @@ mkdir -p /nix && \
 
 systemctl enable tlp
 systemctl enable tailscaled
-systemctl enable greetd
 
