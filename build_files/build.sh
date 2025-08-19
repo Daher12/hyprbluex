@@ -4,8 +4,6 @@ set -ouex pipefail
 
 ### Install packages
 
-dnf5 install -y blueman  xorg-x11-server-Xwayland polkit dbus-tools dbus-daemon pavucontrol qt6-qtwayland qt5-qtwayland blueman-utils nm-applet nautilus xdg-desktop-portal-gtk xdg-user-dirs kitty tlp zsh zsh-syntax-highlighting brightnessctl rofi-wayland --setopt=install_weak_deps=False 
-
 ## environment
 dnf5 install -y xorg-x11-server-Xwayland polkit dbus-tools dbus-daemon qt6-qtwayland qt5-qtwayland xdg-desktop-portal-gtk xdg-user-dirs kitty tlp zsh zsh-syntax-highlighting --setopt=install_weak_deps=False 
 
