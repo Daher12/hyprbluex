@@ -5,7 +5,7 @@ set -ouex pipefail
 ### Install packages
 
 ## environment
-dnf5 install -y  dbus-tools dbus-daemon qt6-qtwayland xdg-user-dirs kitty tlp zsh zsh-syntax-highlighting --setopt=install_weak_deps=False 
+dnf5 install -y  dbus-tools dbus-daemon xdg-user-dirs kitty tlp zsh zsh-syntax-highlighting --setopt=install_weak_deps=False 
 
 ## sound
 #dnf5 install -y pavucontrol
@@ -15,8 +15,7 @@ dnf5 install -y blueman bluez-tools iwd --setopt=install_weak_deps=False
 
 ## other
 
-dnf5 install -y nautilus gvfs-nfs
-
+dnf5 install -y nautilus gvfs-nfs sddm sddm-themes layer-shell-qt layer-shell-qt5 
 
 ## Enable Ublue copr
 dnf5 -y copr enable ublue-os/akmods 
