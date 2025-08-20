@@ -15,7 +15,7 @@ dnf5 install -y blueman bluez-tools iwd --setopt=install_weak_deps=False
 
 ## other
 
-dnf5 install -y nautilus gvfs-nfs sddm sddm-themes layer-shell-qt layer-shell-qt5 
+dnf5 install -y nautilus gvfs-nfs sddm sddm-themes layer-shell-qt
 
 ## Enable Ublue copr
 dnf5 -y copr enable ublue-os/akmods 
