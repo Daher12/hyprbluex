@@ -5,7 +5,7 @@ set -ouex pipefail
 ### Install packages
 
 ## environment
-dnf5 install -y  dbus-tools dbus-daemon xdg-user-dirs kitty tlp zsh --setopt=install_weak_deps=False 
+dnf5 install -y  dbus-tools dbus-daemon xdg-user-dirs kitty tlp zsh gnome-shell --setopt=install_weak_deps=False 
 
 ## sound
 #dnf5 install -y pavucontrol
