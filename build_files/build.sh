@@ -8,10 +8,10 @@ set -ouex pipefail
 dnf5 install -y  dbus-tools dbus-daemon qt6-qtwayland xdg-user-dirs kitty tlp zsh zsh-syntax-highlighting --setopt=install_weak_deps=False 
 
 ## sound
-dnf5 install -y pavucontrol
+#dnf5 install -y pavucontrol
 
 # networking
-dnf5 install -y blueman bluez-tools network-manager-applet iwd --setopt=install_weak_deps=False
+dnf5 install -y blueman bluez-tools iwd --setopt=install_weak_deps=False
 
 ## other
 
