@@ -5,9 +5,7 @@ set -ouex pipefail
 ### Install packages
 
 ## environment
-dnf5 install -y  dbus-tools dbus-daemon xdg-user-dirs xdg-desktop-portal-gtk kitty tlp zsh  --setopt=install_weak_deps=False 
-
-systemctl disable wpa_supplicant
+dnf5 install -y  dbus-broker dbus-tools xdg-user-dirs xdg-desktop-portal-gtk kitty tlp zsh  --setopt=install_weak_deps=False 
 
 ## sound
 #dnf5 install -y pavucontrol
@@ -58,6 +56,7 @@ chmod +x /usr/bin/ox
 
 curl -L https://github.com/Daher12/dots/blob/main/iwd.conf -o /etc/NetworkManager/conf.d/iwd.conf
 
+systemctl disable wpa_supplicant
 systemctl enable tlp
 systemctl enable tailscaled
 
