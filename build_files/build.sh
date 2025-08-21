@@ -8,6 +8,7 @@ set -ouex pipefail
 dnf5 install -y  dbus-tools dbus-daemon xdg-user-dirs kitty tlp zsh gnome-shell  --setopt=install_weak_deps=False 
 
 systemctl disable gdm
+systemctl disable wpa_supplicant
 
 ## sound
 #dnf5 install -y pavucontrol
@@ -55,6 +56,8 @@ mkdir -p /nix && \
 ## Ox
 curl -L https://github.com/curlpipe/ox/releases/latest/download/ox -o /usr/bin/ox && \
 chmod +x /usr/bin/ox
+
+curl -L https://github.com/Daher12/dots/blob/main/iwd.conf -o /etc/NetworkManager/conf.d/iwd.conf
 
 systemctl enable tlp
 systemctl enable tailscaled
