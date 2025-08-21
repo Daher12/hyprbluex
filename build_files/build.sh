@@ -5,7 +5,9 @@ set -ouex pipefail
 ### Install packages
 
 ## environment
-dnf5 install -y  dbus-tools dbus-daemon xdg-user-dirs kitty tlp zsh gnome-shell --setopt=install_weak_deps=False 
+dnf5 install -y  dbus-tools dbus-daemon xdg-user-dirs kitty tlp zsh gnome-shell  --setopt=install_weak_deps=False 
+
+systemctl disable gdm
 
 ## sound
 #dnf5 install -y pavucontrol
@@ -15,14 +17,14 @@ dnf5 install -y blueman bluez-tools iwd --setopt=install_weak_deps=False
 
 ## other
 
-dnf5 install -y nautilus gvfs-nfs sddm sddm-themes layer-shell-qt --setopt=install_weak_deps=False 
+dnf5 install -y nautilus gvfs-nfs --setopt=install_weak_deps=False 
 
 ## Enable Ublue copr
 dnf5 -y copr enable ublue-os/akmods 
 
 ## Hyprland
 dnf5 -y copr enable solopasha/hyprland 
-dnf5 -y install hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot --setopt=install_weak_deps=False
+dnf5 -y install hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot uwsm --setopt=install_weak_deps=False
 dnf5 -y copr disable solopasha/hyprland 
 
 dnf5 -y copr enable tofik/nwg-shell 
@@ -50,9 +52,10 @@ mkdir -p /nix && \
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix -o /nix/determinate-nix-installer.sh && \
 	chmod a+rx /nix/determinate-nix-installer.sh
 
- curl -L https://github.com/curlpipe/ox/releases/latest/download/ox -o /usr/bin/ox && \
- chmod +x /usr/bin/ox
+## Ox
+curl -L https://github.com/curlpipe/ox/releases/latest/download/ox -o /usr/bin/ox && \
+chmod +x /usr/bin/ox
 
 systemctl enable tlp
 systemctl enable tailscaled
-systemctl disable gdm
+
