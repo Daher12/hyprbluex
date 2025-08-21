@@ -24,7 +24,7 @@ dnf5 -y copr enable ublue-os/akmods
 
 ## Hyprland
 dnf5 -y copr enable solopasha/hyprland 
-dnf5 -y install hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot uwsm --setopt=install_weak_deps=False
+dnf5 -y install hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot uwsm newt --setopt=install_weak_deps=False
 dnf5 -y copr disable solopasha/hyprland 
 
 dnf5 -y copr enable tofik/nwg-shell 
