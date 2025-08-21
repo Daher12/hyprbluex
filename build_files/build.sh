@@ -33,7 +33,7 @@ dnf5 -y copr disable chenxiaolong/sbctl
 ## Tailscale
 dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf5 -y config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/shells:zsh-users:zsh-autosuggestions/Fedora_Rawhide/shells:zsh-users:zsh-autosuggestions.repo
-dnf5 -y install zsh-autosuggestions zsh-syntax-highlighting tailscale 1
+dnf5 -y install zsh-autosuggestions zsh-syntax-highlighting tailscale
 
 rm /etc/yum.repos.d/tailscale.repo
 rm /etc/yum.repos.d/shells:zsh-users:zsh-autosuggestions.repo
