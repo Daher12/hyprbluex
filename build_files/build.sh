@@ -5,16 +5,12 @@ set -ouex pipefail
 ### Install packages
 
 ## environment
-dnf5 install -y  dbus-broker dbus-tools xdg-user-dirs xdg-desktop-portal-gtk kitty tlp zsh  --setopt=install_weak_deps=False 
-
-## sound
-#dnf5 install -y pavucontrol
+dnf5 install -y  dbus-broker xdg-user-dirs kitty tlp zsh  --setopt=install_weak_deps=False 
 
 # networking
 dnf5 install -y blueman bluez-tools iwd --setopt=install_weak_deps=False
 
 ## other
-
 dnf5 install -y nautilus gvfs-nfs --setopt=install_weak_deps=False 
 
 ## Enable Ublue copr
@@ -37,8 +33,7 @@ dnf5 -y copr disable chenxiaolong/sbctl
 ## Tailscale
 dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf5 -y config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/shells:zsh-users:zsh-autosuggestions/Fedora_Rawhide/shells:zsh-users:zsh-autosuggestions.repo
-dnf5 -y install zsh-autosuggestions zsh-syntax-highlighting
-dnf5 -y install tailscale 
+dnf5 -y install zsh-autosuggestions zsh-syntax-highlighting tailscale 1
 
 rm /etc/yum.repos.d/tailscale.repo
 rm /etc/yum.repos.d/shells:zsh-users:zsh-autosuggestions.repo
