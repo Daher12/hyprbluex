@@ -5,7 +5,7 @@ set -ouex pipefail
 ### Install packages
 
 ## environment
-dnf5 install -y  xdg-user-dirs kitty tlp zsh  --setopt=install_weak_deps=False 
+dnf5 install -y dbus-daemon xdg-user-dirs kitty tlp zsh  --setopt=install_weak_deps=False 
 
 # networking
 dnf5 install -y blueman iwd --setopt=install_weak_deps=False
@@ -51,7 +51,7 @@ chmod +x /usr/bin/ox
 curl -L https://github.com/pythops/impala/releases/latest/download/impala-x86_64-unknown-linux-gnu  -o /usr/bin/impala && \
 chmod +x /usr/bin/impala
 
-curl -L https://github.com/Daher12/dots/blob/main/iwd.conf -o /etc/NetworkManager/conf.d/iwd.conf
+curl -L https://raw.githubusercontent.com/Daher12/dots/refs/heads/main/iwd.conf -o /etc/NetworkManager/conf.d/iwd.conf
 
 systemctl disable wpa_supplicant
 systemctl enable tlp
