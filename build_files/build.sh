@@ -35,10 +35,9 @@ dnf5 -y copr disable monkeygold/nautilus-open-any-terminal
 
 ## Tailscale
 dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-dnf5 -y install zsh-syntax-highlighting tailscale
+dnf5 -y install tailscale
 
 rm /etc/yum.repos.d/tailscale.repo
-rm /etc/yum.repos.d/shells:zsh-users:zsh-autosuggestions.repo
 
 dnf5 -y copr disable ublue-os/akmods
 
