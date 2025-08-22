@@ -5,7 +5,7 @@ set -ouex pipefail
 ### Install packages
 
 ## environment
-dnf5 install -y dbus-daemon xdg-user-dirs kitty tlp zsh  --setopt=install_weak_deps=False 
+dnf5 install -y util-linux-user dbus-daemon xdg-user-dirs kitty tlp zsh  --setopt=install_weak_deps=False 
 
 # networking
 dnf5 install -y blueman iwd --setopt=install_weak_deps=False
