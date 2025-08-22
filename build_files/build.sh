@@ -5,10 +5,10 @@ set -ouex pipefail
 ### Install packages
 
 ## environment
-dnf5 install -y  dbus-broker xdg-user-dirs kitty tlp zsh  --setopt=install_weak_deps=False 
+dnf5 install -y  xdg-user-dirs kitty tlp zsh  --setopt=install_weak_deps=False 
 
 # networking
-dnf5 install -y blueman bluez-tools iwd --setopt=install_weak_deps=False
+dnf5 install -y blueman iwd --setopt=install_weak_deps=False
 
 ## other
 dnf5 install -y nautilus gvfs-nfs --setopt=install_weak_deps=False 
@@ -41,13 +41,16 @@ rm /etc/yum.repos.d/shells:zsh-users:zsh-autosuggestions.repo
 dnf5 -y copr disable ublue-os/akmods
 
 ## Nix
-mkdir -p /nix && \
-	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix -o /nix/determinate-nix-installer.sh && \
-	chmod a+rx /nix/determinate-nix-installer.sh
+mkdir -p /nix
 
 ## Ox
-curl -L https://github.com/curlpipe/ox/releases/latest/download/ox -o /usr/bin/ox && \
-chmod +x /usr/bin/ox
+curl -L https://github.com/curlpipe/ox/releases/latest/download/ox -o /usr/local/bin/ox && \
+chmod +x /usr/local/bin/ox
+
+## Impala
+curl -L https://github.com/pythops/impala/releases/latest/download/
+impala-x86_64-unknown-linux-gnu  -o /usr/local/bin/impala && \
+chmod +x /usr/local/bin/impala
 
 curl -L https://github.com/Daher12/dots/blob/main/iwd.conf -o /etc/NetworkManager/conf.d/iwd.conf
 
