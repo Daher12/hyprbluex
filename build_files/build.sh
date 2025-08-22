@@ -48,8 +48,7 @@ curl -L https://github.com/curlpipe/ox/releases/latest/download/ox -o /usr/local
 chmod +x /usr/local/bin/ox
 
 ## Impala
-curl -L https://github.com/pythops/impala/releases/latest/download/
-impala-x86_64-unknown-linux-gnu  -o /usr/local/bin/impala && \
+curl -L https://github.com/pythops/impala/releases/latest/download/impala-x86_64-unknown-linux-gnu  -o /usr/local/bin/impala && \
 chmod +x /usr/local/bin/impala
 
 curl -L https://github.com/Daher12/dots/blob/main/iwd.conf -o /etc/NetworkManager/conf.d/iwd.conf
