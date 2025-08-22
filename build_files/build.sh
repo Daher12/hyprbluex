@@ -29,6 +29,9 @@ dnf5 -y copr enable chenxiaolong/sbctl
 dnf5 -y install sbctl
 dnf5 -y copr disable chenxiaolong/sbctl 
 
+dnf5 -y copr enable enable monkeygold/nautilus-open-any-terminal
+dnf5 -y install nautilus-open-any-terminal
+dnf5 -y copr disable monkeygold/nautilus-open-any-terminal
 
 ## Tailscale
 dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
