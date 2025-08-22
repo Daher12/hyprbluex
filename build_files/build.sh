@@ -54,6 +54,10 @@ chmod +x /usr/local/bin/impala
 
 curl -L https://github.com/Daher12/dots/blob/main/iwd.conf -o /etc/NetworkManager/conf.d/iwd.conf
 
+mkdir -p /home/dk
+curl -L https://github.com/curlpipe/ox/blob/master/config/.oxrc -o /home/dk/.oxrc
+curl -L https://github.com/vinceliuice/MacTahoe-gtk-theme/archive/refs/heads/main.zip -o /home/dk/MacTahoe.zip
+
 systemctl disable wpa_supplicant
 systemctl enable tlp
 systemctl enable tailscaled
