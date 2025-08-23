@@ -11,7 +11,7 @@ dnf5 -y copr enable chenxiaolong/sbctl
 dnf5 -y copr enable monkeygold/nautilus-open-any-terminal
 dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 
-dnf5 install -y dbus-daemon xdg-user-dirs kitty tlp zsh libappstream-glib blueman iwd nautilus gvfs-nfs hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot uwsm newt nwg-look sbctl nautilus-open-any-terminal tailscale --setopt=install_weak_deps=False
+dnf5 install -y dbus-daemon xdg-user-dirs kitty tlp zsh libappstream-glib fish blueman iwd nautilus gvfs-nfs hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot uwsm newt nwg-look sbctl nautilus-open-any-terminal tailscale --setopt=install_weak_deps=False
 
 #ls /etc/yum.repos.d/
 #dnf5 -y copr disable solopasha/hyprland 
@@ -34,7 +34,7 @@ chmod +x /usr/bin/ox
 #curl -L https://github.com/pythops/impala/releases/latest/download/impala-x86_64-unknown-linux-gnu  -o /usr/bin/impala && \
 #chmod +x /usr/bin/impala
 
-#curl -L https://raw.githubusercontent.com/Daher12/dots/refs/heads/main/iwd.conf -o /etc/NetworkManager/conf.d/iwd.conf
+curl -L https://raw.githubusercontent.com/Daher12/dots/refs/heads/main/iwd.conf -o /etc/NetworkManager/conf.d/iwd.conf
 
 #systemctl disable wpa_supplicant
 #systemctl enable tlp
