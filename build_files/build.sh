@@ -18,7 +18,8 @@ dnf5 install -y dbus-daemon xdg-user-dirs kitty tlp zsh libappstream-glib bluema
 #dnf5 -y copr disable tofik/nwg-shell 
 #dnf5 -y copr disable chenxiaolong/sbctl 
 #dnf5 -y copr disable monkeygold/nautilus-open-any-terminal
-rm /etc/yum.repos.d/tailscale.repo /etc/yum.repos.d/sbctl.repo /etc/yum.repos.d/hyprland.repo /etc/yum.repos.d/akmods.repo /etc/yum.repos.d/nautilus-open-any-terminal.repo /etc/yum.repos.d/nwg-shell.repo
+rm /etc/yum.repos.d/tailscale.repo /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:chenxiaolong:sbctl.repo /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:monkeygold:nautilus-open-any-terminal.repo /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:solopasha:hyprland.repo /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:tofik:nwg-shell.repo /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ublue-os:akmods.repo
+
 
 #dnf5 -y copr disable ublue-os/akmods
 
