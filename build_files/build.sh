@@ -17,6 +17,7 @@ dnf5 -y copr disable solopasha/hyprland
 dnf5 -y copr disable tofik/nwg-shell 
 dnf5 -y copr disable chenxiaolong/sbctl 
 dnf5 -y copr disable monkeygold/nautilus-open-any-terminal
+ls /etc/yum.repos.d/
 rm /etc/yum.repos.d/tailscale.repo
 dnf5 -y copr disable ublue-os/akmods
 
