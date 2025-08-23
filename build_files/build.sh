@@ -13,13 +13,14 @@ dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable
 
 dnf5 install -y dbus-daemon xdg-user-dirs kitty tlp zsh libappstream-glib blueman iwd nautilus gvfs-nfs hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot uwsm newt nwg-look sbctl nautilus-open-any-terminal tailscale --setopt=install_weak_deps=False
 
-ls /etc/yum.repos.d/
-dnf5 -y copr disable solopasha/hyprland 
-dnf5 -y copr disable tofik/nwg-shell 
-dnf5 -y copr disable chenxiaolong/sbctl 
-dnf5 -y copr disable monkeygold/nautilus-open-any-terminal
-rm /etc/yum.repos.d/tailscale.repo
-dnf5 -y copr disable ublue-os/akmods
+#ls /etc/yum.repos.d/
+#dnf5 -y copr disable solopasha/hyprland 
+#dnf5 -y copr disable tofik/nwg-shell 
+#dnf5 -y copr disable chenxiaolong/sbctl 
+#dnf5 -y copr disable monkeygold/nautilus-open-any-terminal
+rm /etc/yum.repos.d/tailscale.repo /etc/yum.repos.d/sbctl.repo /etc/yum.repos.d/hyprland.repo /etc/yum.repos.d/akmods.repo /etc/yum.repos.d/nautilus-open-any-terminal.repo /etc/yum.repos.d/nwg-shell.repo
+
+#dnf5 -y copr disable ublue-os/akmods
 
 ## Nix
 mkdir -p /nix 
