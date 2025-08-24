@@ -34,13 +34,7 @@ chmod +x /usr/bin/ox
 curl -L https://github.com/pythops/impala/releases/latest/download/impala-x86_64-unknown-linux-gnu  -o /usr/bin/impala && \
 chmod +x /usr/bin/impala
 
-curl -s -L https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz | tar xvz - -C /usr/bin/ && \
-chmod +x /usr/bin/starship
-rm https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz 
-
 curl -L https://raw.githubusercontent.com/Daher12/dots/refs/heads/main/iwd.conf -o /etc/NetworkManager/conf.d/iwd.conf
-
-
 
 systemctl disable wpa_supplicant
 systemctl enable tlp
