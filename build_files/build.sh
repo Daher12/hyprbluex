@@ -11,7 +11,7 @@ dnf5 -y copr enable chenxiaolong/sbctl
 dnf5 -y copr enable monkeygold/nautilus-open-any-terminal
 dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 
-dnf5 install -y dbus-daemon rofi-wayland waybar-git qt6-qtwayland xdg-user-dirs kitty tlp fish blueman iwd nautilus hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot uwsm newt nwg-look nwg-displays sbctl nautilus-open-any-terminal tailscale --setopt=install_weak_deps=False
+dnf5 install -y dbus-daemon darkman rofi-wayland waybar-git qt6-qtwayland xdg-user-dirs kitty tlp fish blueman iwd nautilus hyprland hyprpaper hypridle hyprlock hyprpolkitagent hyprshot uwsm newt nwg-look nwg-displays sbctl nautilus-open-any-terminal tailscale --setopt=install_weak_deps=False
 
 #ls /etc/yum.repos.d/
 #dnf5 -y copr disable solopasha/hyprland 
