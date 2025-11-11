@@ -20,7 +20,7 @@ dnf5 install -y dbus-daemon darkman google-noto-fonts-common rofi-wayland waybar
 #dnf5 -y copr disable monkeygold/nautilus-open-any-terminal
 rm /etc/yum.repos.d/tailscale.repo /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:chenxiaolong:sbctl.repo /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:monkeygold:nautilus-open-any-terminal.repo /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:solopasha:hyprland.repo /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:tofik:nwg-shell.repo /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ublue-os:akmods.repo
 
-
+dnf5 clean all
 #dnf5 -y copr disable ublue-os/akmods
 
 ## Nix
